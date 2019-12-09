@@ -1,0 +1,18 @@
+#!/bin/bash
+# Idea: Having different i3 configs like 'config_work' or 'config_home'
+# The first arguement of this script is the name of the config script to use
+# The chosen Script will be copied and renamed to just 'config', the old one will be deleted
+
+MODE="$1"
+UHOME="$(eval echo ~$USER)"
+I3="$UHOME"/.config/i3/
+CONFIG=config_"$MODE"
+
+if [ -f "$I3$CONFIG" ]; then
+	rm "$I3"config
+	cp "$I3$CONFIG" "$I3"config
+	startx
+else
+	echo "Error: Could not load $I3$CONFIG or config_fallback"
+fi
+
