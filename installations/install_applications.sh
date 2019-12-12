@@ -38,5 +38,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -H -u $SPECIFIE
 wget -O code.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo dpkg -i code.deb
 
+### Install Visual Code plugins
+while read p; do
+    sudo -H -u $SPECIFIEDUSER code --install-extension $p
+done <$SCRIPTPATH/installations/code_extensions
+
 ### Install Spotify
 sudo snap install spotify

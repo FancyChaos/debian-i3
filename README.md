@@ -13,14 +13,14 @@ My own scripts to setting up an i3 environment from a freshly installed Debian B
 
 	The username is the user you want to install i3 for. This is necessary get the correct home directory.
 	If you provide anything as the second argument the system will reboot after the installation finished.
+	
+	The **run.sh** script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
 After the reboot you can start my own home/work setup by executing the `starti3` script.
 
     starti3 home
     or
     starti3 work
-
-The script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
 ## Known bugs/quirks
 - Neovim plugin installation
