@@ -34,13 +34,16 @@ sudo -H -u $SPECIFIEDUSER nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
 ### Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -H -u $SPECIFIEDUSER sh -s -- -y
 
+### Install topgrade via rust (cargo)
+sudo -H -u $SPECIFIEDUSER cargo install topgrade
+
 ### Install Visual Code
 wget -O code.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo dpkg -i code.deb
 
 ### Install Visual Code plugins
 while read p; do
-    sudo -H -u $SPECIFIEDUSER code --install-extension $p
+    sudo -H -u $SPECIFIEDUSER code --force --install-extension $p
 done <$SCRIPTPATH/installations/code_extensions
 
 ### Install Spotify
