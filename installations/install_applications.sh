@@ -26,13 +26,16 @@ cd /tmp/
 sudo -H -u $SPECIFIEDUSER curl -fLo $UHOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sudo -H -u $SPECIFIEDUSER pip3 install --user neovim
 
-mkdir $UHOME/.config/nvim/
+mkdir -p $UHOME/.config/nvim/plugged/
 cp $SCRIPTPATH/.config/nvim/init.vim $UHOME/.config/nvim/
 
 sudo -H -u $SPECIFIEDUSER nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
 
 ### Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -H -u $SPECIFIEDUSER sh -s -- -y
+
+### Source rust for current shell
+sudo -H -u $SPECIFIEDUSER source $UHOME/.cargo/env
 
 ### Install topgrade via rust (cargo)
 sudo -H -u $SPECIFIEDUSER cargo install topgrade

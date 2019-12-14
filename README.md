@@ -1,6 +1,7 @@
 # debian-i3
 My own scripts to setting up an i3 environment from a freshly installed Debian Buster (10)
 
+
 ## Installation
 
  1. Install a new Debian Buster (10) base system
@@ -22,6 +23,7 @@ After the reboot you can start my own home/work setup by executing the `starti3`
     or
     starti3 work
 
+
 ## Known bugs/quirks
 - Neovim plugin installation
 	- The Command `sudo -H -u $SPECIFIEDUSER nvim -c PlugInstall -c UpdateRemotePlugins -c quitall` won't really work right now. To enable the nvim plugins you need to execute the command `PlugInstall` and `UpdateRemotePlugins` inside nvim by yourself.
@@ -36,7 +38,20 @@ Adding your custom i3 configs is really simple. Just create a new i3 config insi
 A config file called `config_school` was created inside the **/home/\<user>/.config/i3/** directory.
 Now you can load this config by executing `starti3 school` on startup.
 
+
+## Issues after latest "real" test run (non VM)
+The latest test run on my home desktop PC revealed following issues:
+
+ 1. vim-plug does not install plugins
+ 2. Visual Code does not install plugins
+ 3. OMF installation failed
+ 4. Topgrade installation failed
+
+This list will be updated after every new test run on my home PC (which won't be very often).
+So some of these issues might have been fixed by now.
+
+
 ## Thanks to
 Thanks to [Soleedus](https://github.com/Soleedus/debian-i3gaps) who gave me the inspiration for a debian i3 setup script.
 
-And of course thanks to everyone I stole scripts or snippets from.
+And of course thanks to everyone I stole scripts, wallpapers or snippets from.

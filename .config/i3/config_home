@@ -192,7 +192,7 @@ bar {
 
 # My own bindings
 bindsym $mod+shift+m exec lock
-bindsym $mod+F2 exec firefox -p default
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec dolphin
 bindsym $mod+shift+o exec systemctl reboot
 bindsym $mod+shift+p exec systemctl poweroff
