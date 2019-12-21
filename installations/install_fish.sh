@@ -8,5 +8,5 @@ sudo apt install -y fish-common fish
 
 ### install oh-my-fish
 omf=$(curl -L https://get.oh-my.fish)
-sudo -H -u $SPECIFIEDUSER fish -c "$omf --noninteractive --verbose"
-sudo -H -u $SPECIFIEDUSER fish -c "omf install scorphish; omf theme scorphish"
+fish -c "$omf --noninteractive --verbose"
+fish -c "omf install scorphish; omf theme scorphish"

@@ -23,16 +23,16 @@ sudo make install
 cd /tmp/
 
 ### Install neovim plugins
-sudo -H -u $SPECIFIEDUSER curl -fLo $UHOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo -H -u $SPECIFIEDUSER pip3 install --user neovim
+curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+pip3 install --user neovim
 
-mkdir -p $UHOME/.config/nvim/plugged/
-cp $SCRIPTPATH/.config/nvim/init.vim $UHOME/.config/nvim/
+mkdir -p $HOME/.config/nvim/plugged/
+cp $SCRIPTPATH/.config/nvim/init.vim $HOME/.config/nvim/
 
-sudo -H -u $SPECIFIEDUSER nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
+nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
 
 ### Install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sudo -H -u $SPECIFIEDUSER sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ### Install Visual Code
 wget -O code.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
@@ -40,7 +40,7 @@ sudo dpkg -i code.deb
 
 ### Install Visual Code plugins
 while read p; do
-    sudo -H -u $SPECIFIEDUSER code --force --install-extension $p
+    code --force --install-extension $p
 done <$SCRIPTPATH/installations/code_extensions
 
 ### Install Spotify

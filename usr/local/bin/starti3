@@ -4,8 +4,7 @@
 # The chosen Script will be copied and renamed to just 'config', the old one will be deleted
 
 MODE="$1"
-UHOME="$(eval echo ~$USER)"
-I3="$UHOME"/.config/i3/
+I3="$HOME"/.config/i3/
 CONFIG=config_"$MODE"
 
 if [ -f "$I3$CONFIG" ]; then
@@ -13,6 +12,6 @@ if [ -f "$I3$CONFIG" ]; then
 	cp "$I3$CONFIG" "$I3"config
 	startx
 else
-	echo "Error: Could not load $I3$CONFIG or config_fallback"
+	echo "Error: Could not load $I3$CONFIG"
 fi
 

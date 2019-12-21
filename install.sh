@@ -1,26 +1,6 @@
 #!/bin/bash
 
-### Variables
-SPECIFIEDUSER="$1"
-REBOOT="$2"
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-
-[ -z "$SPECIFIEDUSER" ] && echo "Specify non-root user" && exit
-
-if [ "$(grep -c ^$SPECIFIEDUSER: /etc/passwd)" == "0" ];
-then
-	echo "User not found on system!" && exit
-fi
-
-### Get home folder of user
-UHOME="$(eval echo ~$SPECIFIEDUSER)"
-
-export REBOOT
-export SPECIFIEDUSER
-export UHOME
-export SCRIPTPATH
-
-echo "Building  and installing i3 preset for user $SPECIFIEDUSER into $UHOME"
+echo "Building  and installing i3 preset for user $USER into $HOME"
 printf "Continue? (y/n): "
 read con
 if [ "$con" != "y" ] && [ "$con" != "Y" ]; then
@@ -53,14 +33,14 @@ sleep 1
 sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module firefox-esr libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch
 
 ### creating dirs like "Pictures", "Downloads" etc.
-sudo -H -u $SPECIFIEDUSER xdg-user-dirs-update
+xdg-user-dirs-update
 
 ### creating dirs
-mkdir $UHOME/.config/
-mkdir $UHOME/.themes/
-mkdir $UHOME/.fonts/
-mkdir $UHOME/.icons
-mkdir $UHOME/GitRepos/
+mkdir $HOME/.config/
+mkdir $HOME/.themes/
+mkdir $HOME/.fonts/
+mkdir $HOME/.icons
+mkdir $HOME/GitRepos/
 
 
 echo "Installing paper icons..."
@@ -78,14 +58,14 @@ sleep 1
 
 cd $SCRIPTPATH
 ### copying theme
-rsync -a -v .themes/oomox-BrightNight $UHOME/.themes/
+rsync -a -v .themes/oomox-BrightNight $HOME/.themes/
 
 ### wallpaper
 sudo rsync -a -v wallpapers/ /usr/share/wallpapers/
-rsync -a -v wallpapers $UHOME/
+rsync -a -v wallpapers $HOME/
 
 ### fonts
-rsync -a -v .fonts $UHOME/
+rsync -a -v .fonts $HOME/
 fc-cache
 
 ### starti3 script
@@ -109,9 +89,9 @@ bash installations/install_i3.sh
 
 cd $SCRIPTPATH
 ### copying configs
-rsync -a -v .gtkrc-2.0 $UHOME/
-rsync -a -v .xinitrc $UHOME/
-rsync -a -v .config/ $UHOME/.config/
+rsync -a -v .gtkrc-2.0 $HOME/
+rsync -a -v .xinitrc $HOME/
+rsync -a -v .config/ $HOME/.config/
 
 ### Git env
 git config --global user.email "Felixs.Developer@gmail.com"
@@ -133,4 +113,3 @@ then
 fi
 
 echo "Please reboot your system"
-

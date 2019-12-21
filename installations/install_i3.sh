@@ -42,4 +42,4 @@ make
 cd /tmp/
 git clone https://salsa.debian.org/debian/i3lock-fancy
 cd i3lock-fancy
-sudo cp lock lock.png /usr/local/bin/
+cp lock lock.png /usr/local/bin/
