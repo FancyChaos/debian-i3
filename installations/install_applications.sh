@@ -7,8 +7,8 @@ sleep 1
 cd /tmp/
 
 ### Install Alacritty
-wget https://github.com/jwilm/alacritty/releases/download/v0.4.0-rc3/Alacritty-v0.4.0-rc3-ubuntu_18_04_amd64.deb
-sudo dpkg -i Alacritty-v0.4.0-rc3-ubuntu_18_04_amd64.deb
+wget https://github.com/alacritty/alacritty/releases/download/v0.4.1/Alacritty-v0.4.1-ubuntu_18_04_amd64.deb
+sudo dpkg -i Alacritty-v0.4.1-ubuntu_18_04_amd64.deb
 
 ### Install bat
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
