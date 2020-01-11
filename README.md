@@ -9,11 +9,10 @@ My own scripts to setting up an i3 environment from a freshly installed Debian B
 	> sudo apt install git
  3. Clone this repository and move into it
 	> git clone https://github.com/FancyChaos/debian-i3.git && cd debian-i3
- 4. Make the run.sh script executable if necessary and run it as sudo
-	> chmod +x run.sh && sudo ./run.sh \<username>
+ 4. Make the run.sh script executable and run it as User
+	> chmod +x run.sh && sudo ./run.sh
 
-	The username is the user you want to install i3 for. This is necessary get the correct home directory.
-	If you provide anything as the second argument the system will reboot after the installation finished.
+	If you provide anything as the first argument the system will reboot after the installation finished.
 	
 	The **run.sh** script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
@@ -25,8 +24,6 @@ After the reboot you can start my own home/work setup by executing the `starti3`
 
 
 ## Known bugs/quirks
-- Neovim plugin installation
-	- The Command `sudo -H -u $SPECIFIEDUSER nvim -c PlugInstall -c UpdateRemotePlugins -c quitall` won't really work right now. To enable the nvim plugins you need to execute the command `PlugInstall` and `UpdateRemotePlugins` inside nvim by yourself.
 - Network problems
 	- On my notebook it's not possible to get the wifi working before the installation is done. That means that you need to hook up an Ethernet cable (Maybe you have more luck with your notebook).
 
@@ -42,10 +39,7 @@ Now you can load this config by executing `starti3 school` on startup.
 ## Issues after latest "real" test run (non VM)
 The latest test run on my home desktop PC revealed following issues:
 
- 1. vim-plug does not install plugins
- 2. Visual Code does not install plugins
- 3. OMF installation failed
- 4. Topgrade installation failed
+ - I had non issues on my last run. Never thought this would happen.
 
 This list will be updated after every new test run on my home PC (which won't be very often).
 So some of these issues might have been fixed by now.
