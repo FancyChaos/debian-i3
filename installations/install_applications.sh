@@ -35,7 +35,7 @@ nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ### Install Visual Code
-wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+wget -O code.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo dpkg -i code.deb
 
 ### Install Visual Code plugins
