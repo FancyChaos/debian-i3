@@ -7,12 +7,12 @@ sleep 1
 cd /tmp/
 
 ### Install Alacritty
-wget https://github.com/alacritty/alacritty/releases/download/v0.4.1/Alacritty-v0.4.1-ubuntu_18_04_amd64.deb
-sudo dpkg -i Alacritty-v0.4.1-ubuntu_18_04_amd64.deb
+wget https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb 
+sudo dpkg -i Alacritty*.deb
 
 ### Install bat
-wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
-sudo dpkg -i bat_0.12.1_amd64.deb
+wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
+sudo dpkg -i bat*.deb
 
 ### Install neovim
 git clone https://github.com/neovim/neovim.git
@@ -35,7 +35,7 @@ nvim -c PlugInstall -c UpdateRemotePlugins -c quitall
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ### Install Visual Code
-wget -O code.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
+wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
 sudo dpkg -i code.deb
 
 ### Install Visual Code plugins

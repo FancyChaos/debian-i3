@@ -48,7 +48,7 @@ sleep 1
 
 ### paper icons
 cd /tmp/
-wget https://launchpadlibrarian.net/425392562/paper-icon-theme_1.5.723-201905252133~daily~ubuntu18.04.1_all.deb
+wget https://snwh.org/paper/download.php?owner=snwh&ppa=ppa&pkg=paper-icon-theme,18.04
 sudo dpkg -i paper*.deb
 sudo apt install -f -y
 
@@ -70,10 +70,6 @@ fc-cache
 
 ### starti3 script
 sudo rsync -a -v usr/local/bin/ /usr/local/bin/
-
-### infinality font rendering (osx option)
-#sudo dpkg -i infinality/libfreetype-infinality6_2.4.9-3_amd64.deb infinality/freetype-infinality_2.4.9-3_all.deb infinality/fontconfig-infinality_1-2_all.deb
-#sudo bash /etc/fonts/infinality/infctl.sh setstyle osx
 
 ### Instal fish shell
 chmod +x installations/install_fish.sh
