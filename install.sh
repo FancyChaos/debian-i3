@@ -96,6 +96,9 @@ git config --global user.name "FancyChaos"
 ### Fix broken packages for good measure (why not?)
 sudo apt install -f -y
 
+### Throw a newer kernel inside
+sudo apt install linux-image-5.4.0-0.bpo.4-amd64 linux-headers-5.4.0-0.bpo.4-amd64
+
 ### Boot into command line
 sudo systemctl set-default multi-user.target
 
