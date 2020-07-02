@@ -71,6 +71,9 @@ fc-cache
 ### starti3 script
 sudo rsync -a -v usr/local/bin/ /usr/local/bin/
 
+### deadbeef plugins
+rsync -a -v .local/ $HOME/.local/
+
 ### Instal fish shell
 chmod +x installations/install_fish.sh
 bash installations/install_fish.sh
@@ -104,11 +107,4 @@ sudo systemctl set-default multi-user.target
 
 echo "Installation done..."
 sleep 1
-
-### Reboot if second arguement is not empty
-if [ ! -z "$REBOOT" ]
-then
-	sudo reboot
-fi
-
 echo "Please reboot your system"

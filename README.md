@@ -12,8 +12,6 @@ My own scripts to setting up an i3 environment from a freshly installed Debian B
  4. Make the run.sh script executable and run it as User
 	> chmod +x run.sh && sudo ./run.sh
 
-	If you provide anything as the first argument the system will reboot after the installation finished.
-	
 	The **run.sh** script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
 After the reboot you can start my own home/work setup by executing the `starti3` script.

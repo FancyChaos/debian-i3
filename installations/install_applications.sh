@@ -7,11 +7,11 @@ sleep 1
 cd /tmp/
 
 ### Install Alacritty
-wget https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb 
+wget https://github.com/alacritty/alacritty/releases/download/v0.4.3/Alacritty-v0.4.3-ubuntu_18_04_amd64.deb
 sudo dpkg -i Alacritty*.deb
 
 ### Install bat
-wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
+wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
 sudo dpkg -i bat*.deb
 
 ### Install neovim
@@ -45,3 +45,7 @@ done <$SCRIPTPATH/installations/code_extensions
 
 ### Install Spotify
 sudo snap install spotify
+
+### Install deadbeef with plugins
+wget -O deadbeef.deb https://sourceforge.net/projects/deadbeef/files/travis/linux/1.8.4/deadbeef-static_1.8.4-1_amd64.deb
+sudo dpkg -i deadbeef.deb

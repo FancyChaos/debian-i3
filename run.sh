@@ -10,11 +10,8 @@ if [ "$?" != "0" ]; then
 	exit
 fi
 
-### Get first boot argument
-REBOOT="$1"
 ### Get path of script
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-export REBOOT
 export SCRIPTPATH
 
 ### Install coreutils if they are not yet installed
