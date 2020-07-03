@@ -100,7 +100,14 @@ git config --global user.name "FancyChaos"
 sudo apt install -f -y
 
 ### Throw a newer kernel inside
-sudo apt install linux-image-5.4.0-0.bpo.4-amd64 linux-headers-5.4.0-0.bpo.4-amd64
+sudo apt install linux-image-5.6.0-0.bpo.2-amd64 linux-headers-5.6.0-0.bpo.2-amd64
+
+### Fix potential wifi bug with newer Kernel
+sudo modprobe -r rtwpci
+sudo mkdir /usr/lib/firmware/rtw88
+sudo ln -s /usr/lib/firmware/rtlwifi/rtl8822befw.bin /usr/lib/firmware/rtw88/rtl8822b_fw.bin
+sudo ln -s /usr/lib/firmware/rtlwifi/rtl8822befw.bin /usr/lib/firmware/rtw88/rtw8822b_fw.bin
+sudo modprobe rtwpci
 
 ### Boot into command line
 sudo systemctl set-default multi-user.target
