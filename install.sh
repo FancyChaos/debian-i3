@@ -30,7 +30,7 @@ echo "Installing packages..."
 sleep 1
 
 ### installing packages and default applications
-sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module firefox-esr libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch
+sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module firefox-esr libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch chromium crda
 
 ### creating dirs like "Pictures", "Downloads" etc.
 xdg-user-dirs-update
@@ -100,7 +100,7 @@ git config --global user.name "FancyChaos"
 sudo apt install -f -y
 
 ### Throw a newer kernel inside
-sudo apt install linux-image-5.6.0-0.bpo.2-amd64 linux-headers-5.6.0-0.bpo.2-amd64
+sudo apt install linux-image-5.4.0-0.bpo.4-amd64 linux-headers-5.4.0-0.bpo.4-amd64
 
 ### Fix potential wifi bug with newer Kernel
 sudo modprobe -r rtwpci
