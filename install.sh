@@ -30,7 +30,7 @@ echo "Installing packages..."
 sleep 1
 
 ### installing packages and default applications
-sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module firefox-esr libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch chromium crda
+sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch chromium crda
 
 ### creating dirs like "Pictures", "Downloads" etc.
 xdg-user-dirs-update
@@ -108,6 +108,9 @@ sudo mkdir /usr/lib/firmware/rtw88
 sudo ln -s /usr/lib/firmware/rtlwifi/rtl8822befw.bin /usr/lib/firmware/rtw88/rtl8822b_fw.bin
 sudo ln -s /usr/lib/firmware/rtlwifi/rtl8822befw.bin /usr/lib/firmware/rtw88/rtw8822b_fw.bin
 sudo modprobe rtwpci
+
+### Enable systemd-networkd
+sudo systemctl enable systemd-networkd.service
 
 ### Boot into command line
 sudo systemctl set-default multi-user.target

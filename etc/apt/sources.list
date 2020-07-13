@@ -2,7 +2,7 @@
 #                   OFFICIAL DEBIAN REPOS                    
 #------------------------------------------------------------------------------#
 
-###### Debian Main Repos
+###### Debian Buster (10) Main Repos
 deb http://deb.debian.org/debian/ stable main contrib non-free
 deb-src http://deb.debian.org/debian/ stable main contrib non-free
 
@@ -14,3 +14,7 @@ deb-src http://deb.debian.org/debian-security stable/updates main contrib non-fr
 
 ###### Backports for newest kernel
 deb http://deb.debian.org/debian buster-backports main
+
+###### Debian Stretch (9) Main Repos
+deb http://deb.debian.org/debian/ stretch main
+deb-src http://deb.debian.org/debian/ stretch main 

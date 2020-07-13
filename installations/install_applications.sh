@@ -49,3 +49,9 @@ sudo snap install spotify
 ### Install deadbeef with plugins
 wget -O deadbeef.deb https://sourceforge.net/projects/deadbeef/files/travis/linux/1.8.4/deadbeef-static_1.8.4-1_amd64.deb
 sudo dpkg -i deadbeef.deb
+
+### Install newest firefox via flatpak
+sudo apt install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.mozilla.firefox
+ln -s /var/lib/flatpak/exports/bin/org.mozilla.firefox /usr/local/bin/firefox
