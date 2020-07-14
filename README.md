@@ -9,8 +9,8 @@ My own scripts to setting up an i3 environment from a freshly installed Debian B
 	> sudo apt install git
  3. Clone this repository and move into it
 	> git clone https://github.com/FancyChaos/debian-i3.git && cd debian-i3
- 4. Make the run.sh script executable and run it as User
-	> chmod +x run.sh && sudo ./run.sh
+ 4. Make the run.sh script executable and run it
+	> chmod +x run.sh && ./run.sh
 
 	The **run.sh** script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
