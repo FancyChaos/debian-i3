@@ -20,8 +20,8 @@ sudo apt update && sudo apt upgrade -y
 ### Install important packages first
 sudo apt install -y curl wget apt-transport-https dirmngr rsync
 
-### copying sources.list
-sudo rsync -a -v etc/apt/sources.list /etc/apt/
+### copying etc/ folder
+sudo rsync -a -v etc/ /etc/
 
 sudo apt update && sudo apt upgrade -y
 
@@ -30,7 +30,7 @@ echo "Installing packages..."
 sleep 1
 
 ### installing packages and default applications
-sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch chromium crda
+sudo apt install -y autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts snapd file-roller pcmanfm pulseaudio pavucontrol alsa-utils numix-gtk-theme screenfetch feh build-essential gtk2-engines-murrine gtk2-engines vim ranger caca-utils highlight atool w3m poppler-utils mediainfo compton python-pip python3-pip libcanberra-gtk-module libgtk2.0-dev libgtk-3-dev gnome-devel dolphin imagemagick scrot nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip firmware-linux-nonfree firmware-iwlwifi jq firmware-realtek nmap zeal thunderbird ack libfile-next-perl neofetch chromium crda net-tools
 
 ### creating dirs like "Pictures", "Downloads" etc.
 xdg-user-dirs-update
@@ -74,7 +74,7 @@ sudo rsync -a -v usr/local/bin/ /usr/local/bin/
 ### deadbeef plugins
 rsync -a -v .local/ $HOME/.local/
 
-### Instal fish shell
+### Install fish shell
 chmod +x installations/install_fish.sh
 bash installations/install_fish.sh
 
@@ -111,6 +111,10 @@ sudo modprobe rtwpci
 
 ### Enable systemd-networkd
 sudo systemctl enable systemd-networkd.service
+
+### Disable webcam by default
+### Toogle back on with 'sudo modprobe uvcvideo'
+sudo modprobe -r uvcvideo
 
 ### Boot into command line
 sudo systemctl set-default multi-user.target

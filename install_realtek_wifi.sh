@@ -42,10 +42,12 @@ sudo make install
 # Lock kernel if wished
 echo "You need to install the drivers again if you update your Kernel."
 echo "Thats why it's recommened to lock the current kernel (disallow updates)"
+
 ask "Lock the kernel to the current version?"
 if [ $? -eq 1 ]; then
 	sudo apt-mark hold "linux-image*" "linux-headers*" linux-libc-dev
 fi
+
 echo ""
 echo "Kernel version locked"
 echo "You can unlock the kernel with 'sudo apt-get unhold *'"
